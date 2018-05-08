@@ -2,7 +2,7 @@
 box:
   id: openjdk
   ports:
-- $PORT
+    - $PORT
 
 #Build our application using Maven, just as we always have
 build:
@@ -14,7 +14,7 @@ build:
         code: mvn clean assembly:assembly
 
 #Push the docker image with our built and tested application to Docker Hub
-push-release:
+test:
   steps:
     - internal/docker-push:
         username: $DOCKER_USERNAME
